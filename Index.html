@@ -1,42 +1,118 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reimagine Malaysia - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+  <style>
+    :root {
+      --primary: #2e8b57;
+      --secondary: #ffd700;
+      --accent: #e63946;
+      --light: #f8f9fa;
+      --dark: #343a40;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                      url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    #map-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 5px solid white;
+    }
+    
+    #malaysia-map {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    #malaysia-map:hover {
+      transform: scale(1.02);
+    }
+    
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 1rem;
+    }
+    
+    button:hover {
+      background-color: #1f6e3f;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(46, 139, 87, 0.4);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Malaysia!</h1>
+  <div class="container">
+    <h1>Welcome to Malaysia!</h1>
+    <p class="tagline">Discover the vibrant culture, stunning landscapes, and delicious cuisine of this tropical paradise</p>
 
-  <div id="map-container">
-    <img src="Malaysia 
-      Map Image.jpg"
-         alt="Map of Malaysia" id="malaysia-map" />
-  </div>
+    <div id="map-container">
+      <img src="Malaysia-Map-Image.jpg" alt="Map of Malaysia" id="malaysia-map" />
+    </div>
 
-  <!-- Button A linking to the second page -->
-  <button id="btnTravel" onclick="window.location.href='Travelling.html'">
-    Travelling To Malaysia
-  </button>
-</body>
-</html>
-
-
-<!-- page2.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reimagine Malaysia - Details</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="button-container">
-    <button id="btnLocal" onclick="window.location.href='Local.html'"
-      >Local Specialites </button>
+    <button id="btnTravel" onclick="window.location.href='Travelling.html'">
+      Explore Malaysia →
+    </button>
   </div>
 </body>
 </html>

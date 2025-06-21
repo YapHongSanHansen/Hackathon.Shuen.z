@@ -16,6 +16,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      flex-direction: column;
     }
     .container {
       width: 80%;
@@ -29,18 +30,25 @@
     .btn {
       display: inline-block;
       margin-top: 1em;
-      padding: 0.5em 1em;
+      padding: 0.8em 1.5em;
       background: #007bff;
       color: white;
       text-decoration: none;
       border-radius: 4px;
       margin: 10px 5px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
     }
     .btn-group {
       margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 15px;
+      flex-wrap: wrap;
     }
     .east-btn {
       background: #28a745;
@@ -48,32 +56,32 @@
     .west-btn {
       background: #dc3545;
     }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>See the Tribes' Locations</h1>
 
-    <!-- single, standalone iframe -->
+    <!-- Google Maps iframe -->
     <iframe
-    width="600" height="450" style="border:0"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!
-      1d16300654.95670799!2d98.92207496793252!3d4.091036208575899!
-      2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3034d3975f6730af%3A0x745969328211cd8!
-      2sMalaysia!5e0!3m2!1sen!2smy!4v1750522357235!5m2!1sen!2smy&
-      center=4.2240661,109.6093634
-      &zoom=5
-      &maptype=roadmap"
+      width="800"
+      height="600"
+      frameborder="0"
+      style="border:0"
+      src="https://maps.google.com/maps?q=Kuala+Lumpur+Malaysia&z=11&output=embed"
       allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      loading="lazy">
     </iframe>
 
     <!-- Button group with three buttons -->
     <div class="btn-group">
-      <a href="TravelWestMalaysia.html" class="btn east-btn">West Malaysia</a>
-      <a href="Index.html" class="btn">Back to Travelling</a>
-      <a href="TravelEastMalaysia.html" class="btn west-btn">East Malaysia</a>
+      
+      <a href="travelpackage.html" class="btn east-btn">Travel Packages</a>
+      
     </div>
   </div>
 </body>

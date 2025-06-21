@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traditional Cloth of Sabah</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-image-container {
+      width: 100%;
+      height: 400px; /* Fixed height for all images */
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images fill container while maintaining aspect ratio */
+      transition: transform 0.3s ease;
+    }
+
+    .product-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card h3 {
+      margin: 0 0 10px;
+      flex-grow: 0;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2e8b57;
+      margin: 10px 0;
+      flex-grow: 0;
+    }
+
+    .product-options {
+      margin-top: auto; /* Pushes options to bottom of card */
+    }
+
+    select, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 14px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #87cefa;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #4682b4;
+    }
+
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4682b4;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .more-options {
+      margin-top: 40px;
+      font-size: 18px;
+      color: #4682b4;
+    }
+
+    .more-options a {
+      color: #2e8b57;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .more-options a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="cart.html" class="cart-link">View Cart</a>
+
+  <h1>Traditional Cloth of Sabah</h1>
+
+  <div class="product-grid">
+    
+    <!-- Product 1 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="Dusun Costume.jpg" alt="Dusun Traditional Dress">
+      </div>
+      <h3>Dusun Traditional Dress</h3>
+      <div class="price">RM150.00</div>
+      <div class="product-options">
+        <label for="size1">Size:</label>
+        <select id="size1" class="size-select">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+        <button onclick="addToCart('Dusun Traditional Dress', 150, 'Dusun Costume.jpg')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="Bajau costume.jpg" alt="Bajau Traditional Costume">
+      </div>
+      <h3>Bajau Traditional Costume</h3>
+      <div class="price">RM180.00</div>
+      <div class="product-options">
+        <label for="size2">Size:</label>
+        <select id="size2" class="size-select">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+        <button onclick="addToCart('Bajau Traditional Costume', 180, 'Bajau costume.jpg')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="murut traditional.jpg" alt="Murut Traditional Attire">
+      </div>
+      <h3>Murut Traditional Costume</h3>
+      <div class="price">RM160.00</div>
+      <div class="product-options">
+        <label for="size3">Size:</label>
+        <select id="size3" class="size-select">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+        <button onclick="addToCart('Murut Traditional Attire', 160, 'murut traditional.jpg')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-options">
+    <p>For more clothing options visit:</p>
+    <a href="http://www.tradisionalclothsabah.com" target="_blank">www.tradisionalclothsabah.com</a>
+  </div>
+
+  <script>
+    function addToCart(name, price, image) {
+      // Get selected size
+      const sizeSelect = event.target.parentElement.querySelector('.size-select');
+      const size = sizeSelect.value;
+      
+      // Create cart item object
+      const item = {
+        name: name,
+        price: price,
+        size: size,
+        image: image
+      };
+      
+      // Get existing cart items from localStorage
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      
+      // Add new item to cart
+      cartItems.push(item);
+      
+      // Save back to localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      
+      // Show confirmation
+      alert(`${name} (Size: ${size}) added to cart!`);
+    }
+  </script>
+
+</body>
+</html>

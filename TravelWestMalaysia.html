@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West Malaysia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2.sub1 {
+      font-size: 60px;
+      margin: 10px 0 30px;
+    }
+
+    /* Map container */
+    #map-container {
+      position: relative;
+      width: 800px;          /* adjust as needed */
+      margin: 0 auto 30px;
+    }
+    #map-container img {
+      width: 100%;
+      display: block;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    /* State buttons */
+    .state-btn {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #333;
+      padding: 4px 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+    .state-btn:hover {
+      background: #87cefa;
+      color: #fff;
+    }
+
+    /* Position each button (tweak these percent values) */
+    #perlis           { top:  5%;  left: 12%; }
+    #kedah            { top: 12%;  left: 15%; }
+    #penang           { top: 15%;  left: 18%; }
+    #perak            { top: 20%;  left: 22%; }
+    #kelantan         { top: 10%;  left: 40%; }
+    #terengganu       { top: 25%;  left: 55%; }
+    #pahang           { top: 30%;  left: 45%; }
+    #selangor         { top: 50%;  left: 30%; }
+    #kualalumpur      { top: 52%;  left: 32%; }
+    #putrajaya        { top: 55%;  left: 34%; }
+    #negeri-sembilan  { top: 60%;  left: 40%; }
+    #melaka           { top: 65%;  left: 42%; }
+    #johor            { top: 75%;  left: 50%; }
+
+  </style>
+</head>
+<body>
+  <a href="WM.html"></a>
+  <h1>Welcome to West Malaysia!</h1>
+  <h2 class="sub1">West Malaysia</h2>
+
+  <div id="map-container">
+    <!-- Your map image -->
+    <img src="TravelWest.png" alt="West Malaysia Map">
+
+    <!-- Buttons for each state -->
+    <button id="selangor"        class="state-btn">Selangor</button>    
+   <button
+  id="kualalumpur"
+  class="state-btn"
+  onclick="window.location.href='kualalumpur.html'">
+  Kuala Lumpur
+</button>
+    <button id="putrajaya"       class="state-btn">Putrajaya</button>
+    <button id="negeri-sembilan" class="state-btn">Negeri Sembilan</button>
+  </div>
+</body>
+
+
+
+</html>
+

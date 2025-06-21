@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuala Lumpur Travel Packages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #2e8b57;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .product-image-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card img:hover {
+      transform: scale(1.1);
+    }
+
+    .product-card h3 {
+      margin: 15px 0 10px;
+      color: #333;
+      font-size: 1.4rem;
+      width: 100%;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #e63946;
+      margin: 10px 0;
+    }
+
+    .product-options {
+      margin-top: auto;
+    }
+    :before, *:after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+button {
+  display: block;        /* so margin applies vertically */
+  width: 100%;           /* full-width */
+  margin: 15px 0;        /* 15px top & bottom, 0 left & right */
+  padding: 12px;         /* consistent inner space */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .quantity-selector button {
+      width: 40px;
+      padding: 12px;
+      background-color: #6c757d;
+    }
+
+    .quantity-selector input {
+      flex: 1;
+      text-align: center;
+      margin: 0 5px;
+      width: 10px;
+    }
+
+    button {
+      background-color: #457b9d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #1d3557;
+    }
+
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #2e8b57;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      z-index: 100;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .more-options {
+      margin-top: 40px;
+      font-size: 18px;
+      color: #4682b4;
+    }
+
+    .more-options a {
+      color: #2e8b57;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .more-options a:hover {
+      color: #1f6e3f;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .product-image-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="cart.html" class="cart-link">View Cart</a>
+
+  <h1>Kuala Lumpur Travel Packages</h1>
+
+  <div class="product-grid">
+    
+    <!-- Package 1 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="Travelkl1.jpg" alt="KL Travel Package 1">
+      </div>
+      <h3>Kuala Lumpur Travel Package 1</h3>
+      <div class="price" id="price1">RM150.00</div>
+      <div class="product-options">
+        <label for="package1">Package Type:</label>
+        <select id="package1" class="package-select" onchange="updatePrice('package1', 'price1', 150)">
+          <option value="Basic">Basic (+RM0)</option>
+          <option value="Standard" selected>Standard (+RM30)</option>
+          <option value="Premium">Premium (+RM60)</option>
+        </select>
+        
+        <div class="quantity-selector">
+          <button onclick="adjustQuantity('quantity1', -1)">-</button>
+          <input type="number" id="quantity1" value="1" min="1" onchange="validateQuantity('quantity1')">
+          <button onclick="adjustQuantity('quantity1', 1)">+</button>
+        </div>
+        
+        <button onclick="addToCart('KL Travel Package 1', 'package1', 'price1', 'quantity1', 'Travelkl1.jpg')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="Travelkl2.jpg" alt="KL Travel Package 2">
+      </div>
+      <h3>Kuala Lumpur Travel Package 2</h3>
+      <div class="price" id="price2">RM180.00</div>
+      <div class="product-options">
+        <label for="package2">Package Type:</label>
+        <select id="package2" class="package-select" onchange="updatePrice('package2', 'price2', 180)">
+          <option value="Basic">Basic (+RM0)</option>
+          <option value="Standard" selected>Standard (+RM40)</option>
+          <option value="Premium">Premium (+RM80)</option>
+        </select>
+        
+        <div class="quantity-selector">
+          <button onclick="adjustQuantity('quantity2', -1)">-</button>
+          <input type="number" id="quantity2" value="1" min="1" onchange="validateQuantity('quantity2')">
+          <button onclick="adjustQuantity('quantity2', 1)">+</button>
+        </div>
+        
+        <button onclick="addToCart('KL Travel Package 2', 'package2', 'price2', 'quantity2', 'Travelkl2.jpg')">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="Travelkl4.jpg" alt="KL Travel Package 3">
+      </div>
+      <h3>Kuala Lumpur Travel Package 3</h3>
+      <div class="price" id="price3">RM160.00</div>
+      <div class="product-options">
+        <label for="package3">Package Type:</label>
+        <select id="package3" class="package-select" onchange="updatePrice('package3', 'price3', 160)">
+          <option value="Basic">Basic (+RM0)</option>
+          <option value="Standard" selected>Standard (+RM35)</option>
+          <option value="Premium">Premium (+RM70)</option>
+        </select>
+        
+        <div class="quantity-selector">
+          <button onclick="adjustQuantity('quantity3', -1)">-</button>
+          <input type="number" id="quantity3" value="1" min="1" onchange="validateQuantity('quantity3')">
+          <button onclick="adjustQuantity('quantity3', 1)">+</button>
+        </div>
+        
+        <button onclick="addToCart('KL Travel Package 3', 'package3', 'price3', 'quantity3', 'Travelkl3.jpg')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-options">
+    <p>For more travel options visit:</p>
+    <a href="http://www.kltravelpackages.com" target="_blank">www.kltravelpackages.com</a>
+  </div>
+
+  <script>
+    // Price multipliers for different package types
+    const priceMultipliers = {
+      'Basic': 1.0,
+      'Standard': 1.2,  // 20% more than basic
+      'Premium': 1.5    // 50% more than basic
+    };
+
+    // Update price when package type changes
+    function updatePrice(selectId, priceId, basePrice) {
+      const select = document.getElementById(selectId);
+      const priceElement = document.getElementById(priceId);
+      const packageType = select.value;
+      
+      // Calculate new price based on package type
+      let price = basePrice;
+      if (packageType === 'Standard') {
+        price = basePrice + 30; // Example: RM30 more for standard
+      } else if (packageType === 'Premium') {
+        price = basePrice + 60; // Example: RM60 more for premium
+      }
+      
+      priceElement.textContent = `RM${price.toFixed(2)}`;
+    }
+
+    // Adjust quantity
+    function adjustQuantity(quantityId, change) {
+      const quantityInput = document.getElementById(quantityId);
+      let newValue = parseInt(quantityInput.value) + change;
+      if (newValue < 1) newValue = 1;
+      quantityInput.value = newValue;
+    }
+
+    // Validate quantity input
+    function validateQuantity(quantityId) {
+      const quantityInput = document.getElementById(quantityId);
+      if (quantityInput.value < 1 || isNaN(quantityInput.value)) {
+        quantityInput.value = 1;
+      }
+    }
+
+    // Add to cart function
+    function addToCart(name, selectId, priceId, quantityId, image) {
+      const select = document.getElementById(selectId);
+      const priceElement = document.getElementById(priceId);
+      const quantityInput = document.getElementById(quantityId);
+      
+      const packageType = select.value;
+      const price = parseFloat(priceElement.textContent.replace('RM', ''));
+      const quantity = parseInt(quantityInput.value);
+      const totalPrice = price * quantity;
+      
+      // Create cart item object
+      const item = {
+        name: `${name} (${packageType})`,
+        price: price,
+        total: totalPrice,
+        type: packageType,
+        quantity: quantity,
+        image: image
+      };
+      
+      // Get existing cart items from localStorage
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      
+      // Add new item to cart
+      cartItems.push(item);
+      
+      // Save back to localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      
+      // Show confirmation
+      alert(`${quantity}x ${name} (${packageType}) - RM${totalPrice.toFixed(2)} added to cart!`);
+      
+      // Reset quantity to 1
+      quantityInput.value = 1;
+    }
+
+    // Initialize prices on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePrice('package1', 'price1', 150);
+      updatePrice('package2', 'price2', 180);
+      updatePrice('package3', 'price3', 160);
+    });
+  </script>
+
+</body>
+</html>
