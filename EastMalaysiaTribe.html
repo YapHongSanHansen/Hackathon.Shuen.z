@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>East Malaysia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #2e8b57;
+      font-size: 2.5rem;
+    }
+
+    h2.sub1 {
+      font-size: 2rem;
+      margin: 10px 0 30px;
+      color: #4682b4;
+    }
+
+    .map-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 0 auto 30px;
+      max-width: 1200px;
+    }
+
+    .state-map {
+      position: relative;
+      width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .state-map img {
+      width: 100%;
+      display: block;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .state-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(70, 130, 180, 0.8);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .state-btn:hover {
+      background: #2e8b57;
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #4682b4;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .map-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .state-map {
+        width: 100%;
+        max-width: 400px;
+      }
+      
+      .state-btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="EM.html" class="back-btn">← Back to East Malaysia</a>
+  
+  <h1>Welcome to East Malaysia!</h1>
+  <h2 class="sub1">Explore Sabah & Sarawak</h2>
+
+  <div class="map-container">
+    <!-- Sabah Map -->
+    <div class="state-map">
+      <img src="TribeSabah.png" alt="Sabah Map">
+      <button class="state-btn" onclick="window.location.href='EMSabah.html'">Sabah</button>
+    </div>
+    
+    <!-- Sarawak Map -->
+    <div class="state-map">
+      <img src="Tribe Sarawak.png" alt="Sarawak Map">
+      <button class="state-btn" onclick="window.location.href='EMAttractions2.html'">Sarawak</button>
+    </div>
+  </div>
+</body>
+</html>

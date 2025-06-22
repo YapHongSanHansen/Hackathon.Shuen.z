@@ -3,89 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>East Malaysia - Sarawak</title>
+  <title>East Malaysia - Sarawak Traditional Clothing</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 20px;
       background-color: #f0f8ff;
-      text-align: center;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     h1 {
-      margin-bottom: 10px;
+      color: #2e8b57;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
     }
 
-    h2.sub1 {
-      font-size: 60px;
-      margin: 10px 0 30px;
+    h2 {
+      color: #4682b4;
+      border-bottom: 2px solid #4682b4;
+      padding-bottom: 10px;
+      margin-top: 40px;
     }
 
-    .side-by-side {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+    .traditional-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
     }
 
-    .side-by-side img {
-      max-width: 300px;
-      height: auto;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      flex-shrink: 0;
+    .traditional-item {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
-    .text {
-      flex: 1;
-      text-align:left;
+    .traditional-item:hover {
+      transform: translateY(-5px);
     }
 
-    .text p {
-      margin: 10px 0;
-      line-height: 1.5;
+    .traditional-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
     }
 
-    .text .buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: flex-start;
+    .traditional-info {
+      padding: 20px;
+    }
+
+    .traditional-info h3 {
+      color: #2e8b57;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4682b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #2e8b57;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #4682b4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    .review-section {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .whatsapp-link {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
       margin-top: 20px;
-    }
-
-    .text .buttons span {
-      background: #87cefa;
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
+      font-weight: bold;
     }
   </style>
 </head>
-
 <body>
-  
-
-<a href='EMAttractions2.html'>
- /*add button color
-</a>
-<div class="side-by-side">
-  <img src="Batik dress.jpg" alt="Batik Pattern">
-  
-  <div class="text">
-    <h3>Batik dress</h3>
-  
+  <div class="container">
+    <a href="EM.html" class="back-btn">← Back to East Malaysia</a>
+    
+    <h1>Sarawak traditions clothing</h1>
+    
+    <h2>Examples of Traditional Garments</h2>
+    
+    <div class="traditional-grid">
+      <!-- Example 1 -->
+      <div class="traditional-item">
+        <img src="bjks.jpg" alt="Baju Kurung Sarawak" class="traditional-img">
+        <div class="traditional-info">
+          <h3>Baju Kurung Sarawak</h3>
+          <p>The classic Sarawak Malay attire featuring intricate songket weaving with gold or silver threads. Typically worn with a matching kain sarung and tudung.</p>
+          <a href="https://www.kaptenbatik.com.my/collections/sarawak" class="btn" target="_blank">View Collection</a>
+        </div>
+      </div>
+      
+      <!-- Example 2 -->
+      <div class="traditional-item">
+        <img src="Ni.jpg" alt="Ngepan Iban" class="traditional-img">
+        <div class="traditional-info">
+          <h3>Ngepan Iban</h3>
+          <p>Traditional Iban costume consisting of a maroon or black velvet jacket with silver ornaments for men, and a hand-woven skirt with silver belts for women.</p>
+          <a href="https://www.ibanculturalheritage.com/clothing" class="btn" target="_blank">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- Example 3 -->
+      <div class="traditional-item">
+        <img src="bc.jpg" alt="Bidayuh Traditional Dress" class="traditional-img">
+        <div class="traditional-info">
+          <h3>Bidayuh Traditional Dress</h3>
+          <p>Colorful costumes made from tree bark (for men) and black cloth with beadwork (for women), often decorated with shells and beads.</p>
+          <a href="https://www.sarawakcraft.com/bidayuh-crafts" class="btn" target="_blank">View Crafts</a>
+        </div>
+      </div>
+      
+      <!-- Example 4 -->
+      <div class="traditional-item">
+        <img src="ou.jpg" alt="Orang Ulu Traditional Attire" class="traditional-img">
+        <div class="traditional-info">
+          <h3>Orang Ulu Attire</h3>
+          <p>Distinctive costumes featuring elaborate beadwork, intricate embroidery, and distinctive headgear decorated with hornbill feathers.</p>
+          <a href="https://borneocolors.com/orang-ulu-art" class="btn" target="_blank">Explore Art</a>
+        </div>
+      </div>
+      
+      <!-- Example 5 -->
+      <div class="traditional-item">
+        <img src="sb.jpg" alt="Sarawak Batik" class="traditional-img">
+        <div class="traditional-info">
+          <h3>Sarawak Batik</h3>
+          <p>Modern interpretations of traditional patterns featuring motifs like the hornbill, orchid, and tribal designs in vibrant colors.</p>
+          <a href="https://www.kaptenbatik.com.my/collections/sale" class="btn" target="_blank">View Sale</a>
+        </div>
+      </div>
+      
+      <!-- Example 6 -->
+      <div class="traditional-item">
+        <img src="MC.jpg" alt="Melanau Traditional Dress" class="traditional-img">
+        <div class="traditional-info">
+          <h3>Melanau Traditional Dress</h3>
+          <p>Elegant costumes featuring the distinctive "Baju Baban" for women with intricate silver brooches and the "Baju Melayu" for men.</p>
+          <a href="https://www.sarawakculturalvillage.com/melanau" class="btn" target="_blank">Cultural Info</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="review-section">
+      <h2>Reviews from Our Customers</h2>
+      <p><em>"The Sarawak Batik dress I purchased is absolutely beautiful! The craftsmanship is exceptional and it's so comfortable to wear."</em> - Aisha, Kuching</p>
+      <p><em>"Authentic Iban Ngepan for my cultural performance. The quality exceeded my expectations!"</em> - Daniel, Miri</p>
+      <p><em>"Perfect traditional outfit for my wedding ceremony. The attention to detail is remarkable."</em> - Sarah, Sibu</p>
+      
+      <a href="https://www.kaptenbatik.com.my/collections/sale" class="btn" target="_blank">Visit Kapten Batik Sale Collection</a>
+      
+      <p style="margin-top: 30px;">For customization and more information:</p>
+      <a href="https://wa.me/60123456789" class="whatsapp-link" target="_blank">
+        WhatsApp +60 12-345 6789
+      </a>
+    </div>
   </div>
- <h1>Reviews from Our Customers</h1>
-  <p>Comments</p>
-  <a href="https://www.kaptenbatik.com.my/collections/sale?srsltid=AfmBOoqE6egn30gG6zDMY0MORp4G6WFcg3H0uxlMth53Zbz8g-MkCT4d" target="_blank" rel="noopener noreferrer">
-    Kapten Batik Sale Collection
-  </a>
-  <p>For Customization and more info you can whatsapp this number +60123456789</p>
 </body>
 </html>
-
-
